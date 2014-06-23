@@ -40,11 +40,11 @@ Examples
 
 ## Few more quick examples
 
-Read payload from filename msfpayloadfn.raw:
+Read and execute payload from filename msfpayloadfn.raw:
 
     C:\> scexec.exe f msfpayloadfn.raw
 
-Read base64 encoded payload from filename msfpayloadfn.base64:
+Read and execute base64 encoded payload from filename msfpayloadfn.base64:
 
     C:\> scexec.exe fb msfpayloadfn.base64
 
