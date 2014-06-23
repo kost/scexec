@@ -1,0 +1,8 @@
+scexecvc64.exe: scexec.obj __exec_payload.obj
+	link scexec.obj __exec_payload.obj
+
+scexec.obj: scexec.c
+	cl scexec.c /Os /TC /c
+
+__exec_payload.obj: __exec_payload.asm
+	ml64 __exec_payload.asm /c

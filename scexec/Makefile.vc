@@ -1,0 +1,2 @@
+scexec.exe: scexec.c
+	cl scexec.c /Os /TC
