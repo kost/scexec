@@ -49,9 +49,9 @@ Just type:
 
 32 bit:
 
-   nmake /f Makefile.vc
+    nmake /f Makefile.vc
 
 64 bit:
 
-   nmake /f Makefile.v64
+    nmake /f Makefile.v64
 
