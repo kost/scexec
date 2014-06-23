@@ -97,6 +97,11 @@ Just type:
 
     nmake /f Makefile.v64
 
+### Builds
+
+    make CC=i386-mingw32-gcc STRIP=i386-mingw32-strip OUT=../bin/scexec-win32.exe
+    make CC=gcc STRIP=strip OUT=../bin/scexec-macosx-x64-dyn.bin
+
 Credits
 =======
 
