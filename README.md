@@ -100,9 +100,14 @@ Just type:
 ### Builds
 
     make CC=i386-mingw32-gcc STRIP=i386-mingw32-strip OUT=../bin/scexec-win32.exe
-    make CC=gcc STRIP=strip OUT=../bin/scexec-macosx-x64-dyn.bin
+    make CC=i686-w64-mingw32-gcc STRIP=i686-w64-mingw32-strip OUT=../bin/scexec-win32c.exe
     make CC=x86_64-w64-mingw32-gcc STRIP=x86_64-w64-mingw32-strip OUT=../bin/scexec-win64.exe
-    
+    make CC=gcc STRIP=strip OUT=../bin/scexec-macosx-x64-dyn.bin
+    make CC=armeb-linux-gcc STRIP=armeb-linux-strip CFLAGS=-static OUT=../bin/scexec-armeb-linux.bin
+    make CC=arm-linux-gcc STRIP=arm-linux-strip CFLAGS=-static OUT=../bin/scexec-arm-linux-static.bin
+    make CC=mips-linux-gcc STRIP=mips-linux-strip CFLAGS=-static OUT=../bin/scexec-mips-linux-static.bin
+    make CC=mipsel-linux-gcc STRIP=mipsel-linux-strip CFLAGS=-static OUT=../bin/scexec-mipsel-linux-static.bin
+
 
 Credits
 =======
