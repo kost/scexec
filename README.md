@@ -101,6 +101,8 @@ Just type:
 
     make CC=i386-mingw32-gcc STRIP=i386-mingw32-strip OUT=../bin/scexec-win32.exe
     make CC=gcc STRIP=strip OUT=../bin/scexec-macosx-x64-dyn.bin
+    make CC=x86_64-w64-mingw32-gcc STRIP=x86_64-w64-mingw32-strip OUT=../bin/scexec-win64.exe
+    
 
 Credits
 =======
