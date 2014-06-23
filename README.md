@@ -29,7 +29,7 @@ Examples
 Building
 ========
 
-### Linux builds
+### Linux/Mac/POSIX builds
 
 Just type:
 
