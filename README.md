@@ -55,3 +55,9 @@ Just type:
 
     nmake /f Makefile.v64
 
+Credits
+=======
+
+Vlatko Kosturjak
+Based on Bernardo Damele A. G. shellcodeexecute
+
