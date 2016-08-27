@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kost/scexec.png)](https://travis-ci.org/kost/scexec)
+
 scexec
 ======
 
