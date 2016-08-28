@@ -5,8 +5,11 @@ compiler:
 install:
   - sudo apt-get update
   - sudo apt-get install gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 
+  - sudo apt-get install lib32gcc-4.8-dev
 script:
   - cd scexec && make 
+  - make CFLAGS=-m32 OUT=../bin/scexec-test
+  - ../bin/scexec-test PYIIIIIIIIIIIIIIII7QZjAXP0A0AkAAQ2AB2BB0BBABXP8ABuJIpjtK68MICbrFRHfM3SlI9wrHTo1cphGpphToCRqy0nmY9srrYxTQ5PUPgpCUcSph2Oq0rSsS1uSHBEbCvMSDPe2SptWpQGaCMYxahMMPAA
   - make CC=i686-w64-mingw32-gcc STRIP=i686-w64-mingw32-strip OUT=../bin/scexec-win32c.exe 
   - make CC=x86_64-w64-mingw32-gcc STRIP=x86_64-w64-mingw32-strip OUT=../bin/scexec-win64.exe 
   - make CC=x86_64-w64-mingw32-gcc STRIP=x86_64-w64-mingw32-strip OUT=../bin/scexec-win64.exe
