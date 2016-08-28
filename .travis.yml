@@ -5,7 +5,7 @@ compiler:
 install:
   - sudo apt-get update
   - sudo apt-get install gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 
-  - sudo apt-get install lib32gcc-4.8-dev
+  - sudo apt-get install libc6-dev-i386 lib32ncurses5-dev
 script:
   - cd scexec && make 
   - make CFLAGS=-m32 OUT=../bin/scexec-test
